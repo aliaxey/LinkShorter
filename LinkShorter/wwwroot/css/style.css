@@ -1,0 +1,27 @@
+﻿body{
+    background:#f0f0ff;
+}
+table,tr,td{
+    font-size:20px;
+    padding:5px;
+}
+thead{
+    text-align:center;
+    font-weight:700;
+    background:#10a0ff;
+}
+tbody{
+    background:#a0e0ff;
+}
+table{
+    width:100%;
+}
+.actions{
+    font-size:12px;
+    color:#e00f0f;
+    
+}
+.form-table {
+    background-color: transparent;
+    width: auto;
+}

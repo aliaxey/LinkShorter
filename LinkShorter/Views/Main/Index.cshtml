@@ -1,0 +1,50 @@
+﻿@{ 
+    ViewData["Title"] = "Список адресов";
+}
+
+<h2>Действующие сокращённые ссылки</h2>
+<table border="1">
+    <thead>
+        <tr>
+            <td>Длинный URL</td>
+            <td>Сщкращённый URL</td>
+            <td>Дата создания</td>
+            <td>Количество переходов</td>
+            <td>Действия</td>
+            </tr>
+    </thead>
+    <tbody>
+        @foreach(ShortLink link in ViewBag.Links) {
+            <tr>
+                <td>
+                    <a href="@link.Url">
+                        @link.Url
+                    </a>
+                </td>
+                <td>
+                    <a href="/@link.ShortUrl">
+                        @link.ShortUrl
+                    </a>
+                </td>
+                <td>
+                    @link.Date
+                </td>
+                <td>
+                    @link.Counter
+                </td>
+                <td class="actions">
+                    <a asp-controller="Main" asp-action="Edit" asp-route-id="@link.Id">Изменить</a>/
+                    <a asp-controller="Main" asp-action="Delete" asp-route-id="@link.Id">Удалить</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<p>Сокращённые ссылки вводятся в строку адреса через "/" после адреса сервера.</p>
+<h3>
+    <a href="/add">
+        Сократить ссылку
+    </a>
+</h3>
+
+

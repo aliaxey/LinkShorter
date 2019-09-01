@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewData["Title"] = "Сократить ссылку";
+
+}
+@model LinkShorter.Models.ShortLink
+
+<form method="post" asp-controller="Main" asp-action="GetShortLink">
+    <h3>Введите адрес</h3>
+    <input type="url" asp-for="Url" name="url" required/>
+    <input type="submit" value="Добавить"/>
+
+</form>
+<a href="/">На главную</a>
+
+

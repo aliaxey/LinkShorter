@@ -1,0 +1,53 @@
+﻿@{
+    ViewData["Title"] = "Изменить ссылку";
+
+}
+@model LinkShorter.Models.ShortLink
+
+<form method="post" asp-controller="Main" asp-action="Edit">
+    <table class="form-table" border="0">
+        <tbody class="form-table">
+            <tr>
+                <td>
+                    Ссылка
+                </td>
+                <td>
+                    <input type="url" asp-for="Url" required />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Сокращённая ссылка
+                </td>
+                <td>
+                    <input type="text" asp-for="ShortUrl" required />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Дата создания
+                </td>
+                <td>
+                    <input type="datetime-local" asp-for="Date" required />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Счётчик
+                </td>
+                <td>
+                    <input type="number" min="0" asp-for="Counter" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" value="Изменить" />
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+    
+
+</form>
+<a href="/">На главную</a>
